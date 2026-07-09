@@ -10,10 +10,11 @@
 //   - Autocomplete + typo detection on operator names inside this package.
 //   - Cross-platform drift caught at the construction site: an operator not
 //     in this union fails to compile here, before it can reach a consumer.
-//   - Zero casts for the app-side consumer (types match `@rnmapbox/maps`).
-//   - Zero casts for the web-side consumer: `mapbox-gl`'s
-//     `ExpressionSpecification` is `[string, ...any[]]` (looser), so a value
-//     typed as `readonly [ExpressionName, ...]` flows in without a cast.
+//   - Zero casts for the app-side consumer: our mutable tuple is assignable
+//     to `@rnmapbox/maps`'s `readonly [ExpressionName, ...]` variant.
+//   - Zero casts for the web-side consumer: the shape matches `mapbox-gl`'s
+//     `ExpressionSpecification` (`[string, ...any[]]`) directly. A `readonly`
+//     tuple would NOT be assignable there — TS rejects `readonly` → mutable.
 //
 // Keep in sync with `@rnmapbox/maps` if their `ExpressionName` union grows.
 
@@ -110,7 +111,7 @@ type ExpressionField =
   | ExpressionField[]
   | {[key: string]: ExpressionField};
 
-export type Expression = readonly [ExpressionName, ...ExpressionField[]];
+export type Expression = [ExpressionName, ...ExpressionField[]];
 export type FilterExpression = Expression;
 
 // Value of a text-field property — a string or expression that produces a string.
