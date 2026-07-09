@@ -11,7 +11,7 @@
   "private": false,
   "packageManager": "pnpm@11.1.1",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/mapbox-styles/mapbox-color-theme-data.json lib/mapbox-styles/",
     "lint": "eslint",
     "prettier": "prettier -c src",
     "check-all": "pnpm build && pnpm lint && pnpm prettier && pnpm test",
