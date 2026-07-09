@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.0...v1.0.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* make Expression not readonly to support web type ([#3](https://github.com/AtB-AS/mapbox-shared/issues/3)) ([d737779](https://github.com/AtB-AS/mapbox-shared/commit/d737779036038f495a16a6b33f0a0eab04819304))
+
 ## 1.0.0 (2026-07-09)
 
 
