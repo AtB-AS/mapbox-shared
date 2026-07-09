@@ -1,0 +1,18 @@
+name: TypeScript Check, Lint & Test
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  check:
+    name: TypeScript Check All
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check-all
