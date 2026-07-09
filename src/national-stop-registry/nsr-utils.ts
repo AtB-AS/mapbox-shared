@@ -1,6 +1,7 @@
-import {Expression, FilterExpression} from '../types';
+import {Expression} from '../types';
 import {NsrLayer} from './nsr-layers';
 import {NsrPinIconCode, PinTheme, PinType} from '../mapbox-styles/pin-types';
+import {getIconZoomTransitionStyle} from '../mapbox-styles/get-icon-zoom-transition-style';
 
 export const getNsrLayerSourceProps = (
   mapboxNsrSourceLayerId: string,
@@ -10,17 +11,6 @@ export const getNsrLayerSourceProps = (
   sourceLayerID: mapboxNsrSourceLayerId,
   id: layerId,
 });
-
-export const getFilterWhichAlsoHidesSelectedFeature = (
-  /**
-   * @property {FilterExpression} filter should be an array with 'all' as the first element
-   */
-  filter: FilterExpression,
-  selectedFeaturePropertyId: string | undefined,
-): FilterExpression => [
-  ...filter,
-  ['!=', ['get', 'id'], selectedFeaturePropertyId ?? ''],
-];
 
 const scaleTransitionZoomRange = 1.5; // icon starts very small and then reaches full size across this zoom range
 const opacityTransitionExtraZoomRange = scaleTransitionZoomRange / 8;
@@ -66,41 +56,6 @@ type LayerPropsDeterminedByZoomLevel = {
     textSize: Expression;
     textOpacity: Expression | number;
   };
-};
-
-/*
- * Standardized calculations for icon size and opacity zoom transitions.
- * (Inlined from the mobile app's map utils.)
- */
-const getIconZoomTransitionStyle = (
-  reachFullScaleAtZoomLevel: number,
-  iconFullSize: number | Expression,
-  scaleTransitionZoomRangeArg: number,
-  opacityTransitionExtraZoomRangeArg: number,
-): {iconSize: Expression; iconOpacity: Expression} => {
-  const iconOpacity: Expression = [
-    'interpolate',
-    ['linear'],
-    ['zoom'],
-    reachFullScaleAtZoomLevel - scaleTransitionZoomRangeArg,
-    0,
-    reachFullScaleAtZoomLevel -
-      scaleTransitionZoomRangeArg +
-      opacityTransitionExtraZoomRangeArg,
-    1,
-  ];
-
-  const iconSize: Expression = [
-    'interpolate',
-    ['linear'],
-    ['zoom'],
-    reachFullScaleAtZoomLevel - scaleTransitionZoomRangeArg,
-    0.3,
-    reachFullScaleAtZoomLevel,
-    iconFullSize,
-  ];
-
-  return {iconSize, iconOpacity};
 };
 
 export const getLayerPropsDeterminedByZoomLevel: (

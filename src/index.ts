@@ -6,6 +6,9 @@ export {getMapboxDarkStyle} from './mapbox-styles/get-mapbox-dark-style';
 // Standard basemap color-theme (used inside style imports).
 export {colorTheme} from './mapbox-styles/mapbox-color-theme';
 
+// Standardized calculations for icon size and opacity zoom transitions.
+export {getIconZoomTransitionStyle} from './mapbox-styles/get-icon-zoom-transition-style';
+
 // Pin naming (used for sprite icon references like `stoppin_bus_default_light`).
 export type {
   NsrPinIconCode,
@@ -20,6 +23,9 @@ export type {
   PinIcon,
 } from './mapbox-styles/pin-types';
 
+// Filter helper for hiding the currently-selected feature from a layer.
+export {getFilterWhichAlsoHidesSelectedFeature} from './mapbox-styles/get-filter-which-also-hides-selected-feature';
+
 // National Stop Registry (NSR) — layer definitions + zoom-transition math.
 export {
   nsrCircleLayers,
@@ -29,7 +35,6 @@ export {
 export type {NsrLayer} from './national-stop-registry/nsr-layers';
 export {
   getNsrLayerSourceProps,
-  getFilterWhichAlsoHidesSelectedFeature,
   getLayerPropsDeterminedByZoomLevel,
 } from './national-stop-registry/nsr-utils';
 export type {LayerPropsDeterminedByZoomLevelParams} from './national-stop-registry/nsr-utils';
