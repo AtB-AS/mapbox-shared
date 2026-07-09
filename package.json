@@ -1,6 +1,6 @@
 {
   "name": "@atb-as/mapbox-shared",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mapbox style JSON, sprite icon naming, and National Stop Registry layer definitions shared between AtB's web planner and mobile app.",
   "repository": {
     "url": "https://github.com/AtB-AS/mapbox-shared"
