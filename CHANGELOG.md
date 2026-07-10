@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.1...v1.0.2) (2026-07-10)
+
+
+### Bug Fixes
+
+* readonly for rnmapbox compatibility ([de17af6](https://github.com/AtB-AS/mapbox-shared/commit/de17af6ad9b7b5c16d8b174a83c92324f39df56c))
+
 ## [1.0.1](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.0...v1.0.1) (2026-07-09)
 
 
