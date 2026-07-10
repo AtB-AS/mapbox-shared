@@ -118,7 +118,10 @@ export type FilterExpression = Expression;
 // Use in parameter positions to accept both our mutable `Expression` and
 // values pre-typed as `@rnmapbox/maps`'s readonly `Expression`. Mutable →
 // readonly widening means our own values still fit.
-export type ReadonlyExpression = readonly [ExpressionName, ...ExpressionField[]];
+export type ReadonlyExpression = readonly [
+  ExpressionName,
+  ...ExpressionField[],
+];
 
 // Value of a text-field property — a string or expression that produces a string.
 export type TextField = string | Expression;
