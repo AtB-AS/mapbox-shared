@@ -1,4 +1,4 @@
-import {FilterExpression} from '../types';
+import {FilterExpression, ReadonlyExpression} from '../types';
 
 /**
  * Extends a layer filter with a condition that hides the currently selected
@@ -10,7 +10,7 @@ import {FilterExpression} from '../types';
  * @param selectedFeaturePropertyId - id of the feature to hide, or undefined for none
  */
 export const getFilterWhichAlsoHidesSelectedFeature = (
-  filter: FilterExpression,
+  filter: ReadonlyExpression,
   selectedFeaturePropertyId: string | undefined,
 ): FilterExpression => [
   ...filter,

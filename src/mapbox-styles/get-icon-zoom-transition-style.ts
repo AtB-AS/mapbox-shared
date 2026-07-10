@@ -1,11 +1,11 @@
-import {Expression} from '../types';
+import {Expression, ReadonlyExpression} from '../types';
 
 /*
  * Standardized calculations for icon size and opacity zoom transitions.
  */
 export const getIconZoomTransitionStyle = (
   reachFullScaleAtZoomLevel: number,
-  iconFullSize: number | Expression,
+  iconFullSize: number | ReadonlyExpression,
   scaleTransitionZoomRange: number,
   opacityTransitionExtraZoomRange: number,
 ): {iconSize: Expression; iconOpacity: Expression} => {
