@@ -107,7 +107,8 @@ type ExpressionField =
   | string
   | number
   | boolean
-  | Expression
+  // `readonly` lets rnmapbox-typed values fit as nested elements.
+  | readonly [ExpressionName, ...ExpressionField[]]
   | ExpressionField[]
   | {[key: string]: ExpressionField};
 
