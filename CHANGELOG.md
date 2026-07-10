@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.2...v1.0.3) (2026-07-10)
+
+
+### Bug Fixes
+
+* prettier in types.ts ([6b87241](https://github.com/AtB-AS/mapbox-shared/commit/6b87241c933400ebeeb45c864062e75e7225b036))
+* ReadonlyExpression as input param type ([9302118](https://github.com/AtB-AS/mapbox-shared/commit/930211891a4203ef4b4fcfa160625c3abe895867))
+
 ## [1.0.2](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.1...v1.0.2) (2026-07-10)
 
 
