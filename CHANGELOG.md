@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.3...v1.0.4) (2026-07-13)
+
+
+### Bug Fixes
+
+* remove styles referencing non-existing layers ([#7](https://github.com/AtB-AS/mapbox-shared/issues/7)) ([40b3445](https://github.com/AtB-AS/mapbox-shared/commit/40b344548a667d39b499d653e1a3dc88b413c399))
+
 ## [1.0.3](https://github.com/AtB-AS/mapbox-shared/compare/v1.0.2...v1.0.3) (2026-07-10)
 
 
